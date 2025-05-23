@@ -51,6 +51,8 @@ const Board: React.FC<BoardProps> = ({ size, queens, onCellClick }) => {
   return (
     <div 
       className={styles.boardContainer}
+      role="grid"
+      aria-label={`${size}x${size} chess board`}
       style={{ 
         '--board-size': size,
         gridTemplateColumns: `repeat(${size}, ${cellSize}px)`,

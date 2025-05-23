@@ -30,11 +30,15 @@ const Cell: React.FC<ExtendedCellProps> = ({
       className={`${styles.cellContainer} ${isEvenCell ? styles.evenCell : styles.oddCell} ${isInRange ? styles.inRange : ''}`}
       style={cellStyle}
       onClick={() => onClick(position)}
+      role="gridcell"
+      aria-label={`Cell at row ${position.row + 1}, column ${position.col + 1}${hasQueen ? ' with queen' : ''}${isAttacked ? ' under attack' : ''}`}
+      tabIndex={0}
     >
       {hasQueen && (
         <span 
           className={`${styles.queen} ${isAttacked ? styles.attacked : styles.safe}`}
           style={queenStyle}
+          aria-hidden="true"
         >
           ♛
         </span>

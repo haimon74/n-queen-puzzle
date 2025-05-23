@@ -3,6 +3,7 @@ import Board from './components/Board';
 import Timer from './components/Timer';
 import BoardSizeSelector from './components/BoardSizeSelector';
 import { Position } from './types/queens';
+import { isAttacked, isGameComplete as checkGameComplete } from './utils/gameLogic';
 import styles from './App.module.css';
 
 const App: React.FC = () => {
@@ -41,20 +42,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (queens.length === boardSize) {
-      const hasAttackedQueens = queens.some((queen, index) => {
-        return queens.some((otherQueen, otherIndex) => {
-          if (index === otherIndex) return false;
-          return (
-            queen.row === otherQueen.row ||
-            queen.col === otherQueen.col ||
-            Math.abs(queen.row - otherQueen.row) === Math.abs(queen.col - otherQueen.col)
-          );
-        });
-      });
-
-      if (!hasAttackedQueens) {
-        setIsGameComplete(true);
-      }
+      setIsGameComplete(checkGameComplete(queens, boardSize));
     } else {
       setIsGameComplete(false);
     }
