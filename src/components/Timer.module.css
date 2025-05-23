@@ -1,0 +1,11 @@
+.timerContainer {
+  font-size: 1rem;
+  font-family: monospace;
+  padding: 4px 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+} 

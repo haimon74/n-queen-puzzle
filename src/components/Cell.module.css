@@ -1,0 +1,48 @@
+.cellContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cellContainer:hover {
+  filter: brightness(0.95);
+}
+
+.cellContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.cellContainer.evenCell {
+  background-color: #ffffff;
+}
+
+.cellContainer.oddCell {
+  background-color: #e0e0e0;
+}
+
+.cellContainer.inRange::after {
+  background-color: rgba(255, 165, 0, 0.2);
+}
+
+.queen {
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.queen.attacked {
+  color: #ff0000;
+}
+
+.queen.safe {
+  color: #000000;
+} 

@@ -1,0 +1,28 @@
+.selectContainer {
+  margin: 10px 0;
+}
+
+.select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.select:hover {
+  border-color: #999;
+}
+
+.select:focus {
+  border-color: #666;
+}
+
+.label {
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+} 
